@@ -7,24 +7,28 @@ const services = [
     description:
       "Accurate and timely bookkeeping to keep your financial records organised and up to date.",
     Icon: ClipboardList,
+    slug: "bookkeeping",
   },
   {
     title: "Tax Lodgement",
     description:
       "Ensure your tax returns are lodged correctly and on time. No stress, no hassle.",
     Icon: FileText,
+    slug: "tax-lodgement",
   },
   {
     title: "BAS Preparation",
     description:
       "Let us handle your Business Activity Statements so you can focus on running your business.",
     Icon: BookOpen,
+    slug: "bas-preparation",
   },
   {
     title: "Tax Planning",
     description:
       "Proactive tax strategies to help you minimise your tax liability and maximise your returns.",
     Icon: ShieldCheck,
+    slug: "tax-planning",
   },
 ];
 
@@ -36,10 +40,12 @@ export default function Offer() {
           <p className="text-[19px] font-semibold tracking-[0.25em] text-emerald-700">
             WHAT WE OFFER
           </p>
+
           <h2 className="mt-4 font-serif text-4xl md:text-5xl font-semibold text-[#1f1a17] leading-tight">
             Accounting services <br className="hidden sm:block" />
             tailored to your needs
           </h2>
+
           <p className="mx-auto mt-6 max-w-2xl text-sm md:text-base text-[#6b625c]">
             From day-to-day bookkeeping to complex tax planning, Clear
             Accounting provides a full range of services to keep your business
@@ -49,9 +55,10 @@ export default function Offer() {
 
         {/* Cards */}
         <div className="mt-8 grid gap-3 md:gap-6 lg:gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ title, description, Icon }) => (
-            <div
+          {services.map(({ title, description, Icon, slug }) => (
+            <Link
               key={title}
+              href={`/services#${slug}`}
               className="group grid grid-cols-[48px_1fr] gap-x-3 gap-y-2 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-[#f1e9e4]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 transition-all duration-300 group-hover:bg-[#6b1e1e]">
@@ -65,7 +72,7 @@ export default function Offer() {
               <p className="col-span-2 text-sm leading-relaxed text-[#6b625c]">
                 {description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 

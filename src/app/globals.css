@@ -43,3 +43,18 @@ body {
 .fade-in-up-soft {
   animation: fadeInUpSoft 0.35s ease;
 }
+/* services page */
+.service-highlight {
+  transform: scale(1.02);
+  border-color: #d6a248 !important;
+  box-shadow: 0 20px 45px rgba(214, 162, 72, 0.18);
+  grid: 2px;
+}
+
+.service-highlight .service-highlight-bar {
+  transform: scaleX(1);
+}
+
+.service-highlight .service-highlight-glow {
+  opacity: 1;
+}
